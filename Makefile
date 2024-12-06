@@ -4,7 +4,7 @@ PHONY: run stop build clean pbc
 pbc:
 	@python3 corev2/message/pbc.py source=pb
 
-build: build_gate build_door build_game build_master
+build: build_duel build_gate build_door build_game build_master
 
 build_game:
 	@echo "Building gate..."

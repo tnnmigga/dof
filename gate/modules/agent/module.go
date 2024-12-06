@@ -13,7 +13,7 @@ const (
 
 const moduleName = "agent"
 
-type agent struct {
+type module struct {
 	iface.IModule
 	agentType string
 	listener  IListener
@@ -27,7 +27,7 @@ type IListener interface {
 
 func New(agentType string) iface.IModule {
 	m := basic.NewConcurrency(moduleName)
-	a := &agent{
+	a := &module{
 		IModule:   m,
 		agentType: agentType,
 		manager:   NewAgentManager(m),
@@ -44,11 +44,11 @@ func New(agentType string) iface.IModule {
 	return a
 }
 
-func (m *agent) Run() error {
+func (m *module) Run() error {
 	return m.listener.Run()
 }
 
-func (m *agent) Exit() error {
+func (m *module) Exit() error {
 	m.listener.Close()
 	for _, agent := range m.manager.agents {
 		agent.cancel()

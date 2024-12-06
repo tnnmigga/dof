@@ -4,8 +4,8 @@ must:
     - duel
 
 log:
-  stdout: ../logs/door.log
-  stderr: ../logs/door.log
+  stdout: ../logs/duel.log
+  stderr: ../logs/duel.log
 
 nmq:
   default:

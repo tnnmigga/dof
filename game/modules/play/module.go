@@ -11,12 +11,12 @@ import (
 
 const moduleName = "play"
 
-type play struct {
+type module struct {
 	*domain.Domain
 }
 
 func New() iface.IModule {
-	m := &play{
+	m := &module{
 		Domain: domain.New(basic.NewEventLoop(moduleName, basic.DefaultMQLen)),
 	}
 	userops.Init(m)

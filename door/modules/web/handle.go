@@ -10,7 +10,7 @@ import (
 	"github.com/tnnmigga/corev2/message"
 )
 
-func (m *web) initHandle() {
+func (m *module) initHandle() {
 	m.GET("/index", index)
 	m.POST("/login", loginOrRegister)
 }

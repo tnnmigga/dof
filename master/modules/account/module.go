@@ -9,12 +9,12 @@ import (
 
 const moduleName = "account"
 
-type account struct {
+type module struct {
 	iface.IModule
 }
 
 func New() iface.IModule {
-	m := &account{
+	m := &module{
 		IModule: basic.NewConcurrency(moduleName),
 	}
 	m.Init()

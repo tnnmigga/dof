@@ -7,11 +7,11 @@ import (
 	"github.com/tnnmigga/corev2/message"
 )
 
-func (m *agent) register() {
+func (m *module) register() {
 	message.Handle(m, m.onS2CPackage)
 }
 
-func (m *agent) onS2CPackage(pkg *pb.S2CMsg) {
+func (m *module) onS2CPackage(pkg *pb.S2CMsg) {
 	agent := m.manager.GetAgent(pkg.UserID)
 	if agent == nil {
 		log.Warnf("agent not found %d", pkg.UserID)

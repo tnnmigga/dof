@@ -9,13 +9,13 @@ import (
 
 const moduleName = "web"
 
-type web struct {
+type module struct {
 	iface.IModule
 	*hs.HttpService
 }
 
 func New() iface.IModule {
-	m := &web{
+	m := &module{
 		IModule:     basic.NewConcurrency(moduleName),
 		HttpService: hs.NewHttpService(),
 	}
@@ -24,6 +24,6 @@ func New() iface.IModule {
 	return m
 }
 
-func (m *web) Exit() error {
+func (m *module) Exit() error {
 	return m.Stop()
 }
