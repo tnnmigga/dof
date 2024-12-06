@@ -22,5 +22,5 @@
 # env file
 .env
 
-logs/*
-bin/*
+logs
+bin
