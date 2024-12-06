@@ -1,0 +1,23 @@
+syntax = "proto3";
+package pb;
+
+import "code.proto";
+
+message C2SMsg {
+    uint64 UserID = 1;
+    bytes Body    = 2;
+}
+
+message S2CMsg {
+    uint64 UserID = 1;
+    bytes Body    = 2;
+}
+
+message UserLoginReq {
+    uint64 UserID = 1;
+}
+
+message UserLoginResp {
+    ErrCode Code    = 1;
+    uint32 ServerID = 2;
+}
