@@ -1,6 +1,8 @@
 package cards
 
-import "fmt"
+import (
+	"fmt"
+)
 
 var factory = map[int32]func() ICard{}
 
@@ -25,34 +27,23 @@ type ICard interface {
 }
 
 type Card struct {
-	pairs   []Pair[string, int32] // 数值
-	Effects []IEffect             // 效果
-	Skills  []ISkill              // 技能
+	attack  int32
+	defense int32
+	health  int32
+	Effects []IEffect // 效果
+	Skills  []ISkill  // 技能
 }
 
 func (c *Card) Attack() int32 {
-	return c.Value(EnumCardValue.Attack)
+	return c.attack
 }
 
 func (c *Card) Defense() int32 {
-	return c.Value(EnumCardValue.Defense)
+	return c.defense
 }
 
 func (c *Card) Health() int32 {
-	return c.Value(EnumCardValue.Health)
-}
-
-func (c *Card) Value(key string, value ...int32) int32 {
-	for _, item := range c.pairs {
-		if item.First != key {
-			continue
-		}
-		if len(value) > 0 {
-			item.Second = value[0]
-		}
-		return item.Second
-	}
-	return 0
+	return c.health
 }
 
 type IEffect interface {

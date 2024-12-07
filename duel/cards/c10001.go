@@ -6,9 +6,9 @@ type C10001 struct {
 
 func NewC10001() ICard {
 	card := &C10001{}
-	card.Value(EnumCardValue.Attack, 1000)
-	card.Value(EnumCardValue.Defense, 1000)
-	card.Value(EnumCardValue.Health, 1000)
+	card.attack = 1000
+	card.defense = 1000
+	card.health = 1000
 	return card
 }
 
