@@ -34,7 +34,7 @@ export function encode(msgName, msg) {
     protoMsg = msgBuilders[msgName].encode(protoMsg).finish()
     let buf = Buffer.alloc(5)
     buf.writeUint32LE(nametoid(msgName))
-    buf.writeUIntLE(0, 4, 1)
+    buf.writeUIntLE(1, 4, 1)
     return Buffer.concat([buf, Buffer.from(protoMsg)])
 }
 

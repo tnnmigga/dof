@@ -145,7 +145,7 @@ func NewAgent() *Agent {
 }
 
 func (a *Agent) OnMessage(data []byte) {
-	message.Cast(a.servID, &pb.C2SMsg{
+	message.Cast(a.servID, &pb.C2SPackageMsg{
 		UserID: a.userID,
 		Body:   data,
 	})

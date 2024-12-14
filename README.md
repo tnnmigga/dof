@@ -1,1 +1,1 @@
-# Duel of Fantasia
+# eastv2

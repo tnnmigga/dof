@@ -12,7 +12,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-func LoadAsync(uid uint64, cb func(*userdata.Entity, error)) {
+func LoadAsync(uid uint64, cb func(*userdata.Meta, error)) {
 	if p, ok := manager.cache[uid]; ok {
 		cb(p, nil)
 		return
@@ -22,17 +22,17 @@ func LoadAsync(uid uint64, cb func(*userdata.Entity, error)) {
 	if len(cbs) > 1 {
 		return
 	}
-	conc.Async(manager, func() (*userdata.Entity, error) {
+	conc.Async(manager, func() (*userdata.Meta, error) {
 		ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
 		defer cancel()
 		result := mgdb.Default().Collection("userdata").FindOne(ctx, bson.M{"_id": uid})
-		var user userdata.Entity
+		var user userdata.Meta
 		err := result.Decode(&user)
 		if err != nil {
 			return nil, err
 		}
 		return &user, nil
-	}, func(user *userdata.Entity, err error) {
+	}, func(user *userdata.Meta, err error) {
 		if err != nil {
 			log.Errorf("LoadAsync load error %v", err)
 		} else {

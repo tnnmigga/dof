@@ -23,23 +23,23 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type C2SMsg struct {
+type C2SPackageMsg struct {
 	UserID uint64 `protobuf:"varint,1,opt,name=UserID,proto3" json:"UserID,omitempty"`
 	Body   []byte `protobuf:"bytes,2,opt,name=Body,proto3" json:"Body,omitempty"`
 }
 
-func (m *C2SMsg) Reset()         { *m = C2SMsg{} }
-func (m *C2SMsg) String() string { return proto.CompactTextString(m) }
-func (*C2SMsg) ProtoMessage()    {}
-func (*C2SMsg) Descriptor() ([]byte, []int) {
+func (m *C2SPackageMsg) Reset()         { *m = C2SPackageMsg{} }
+func (m *C2SPackageMsg) String() string { return proto.CompactTextString(m) }
+func (*C2SPackageMsg) ProtoMessage()    {}
+func (*C2SPackageMsg) Descriptor() ([]byte, []int) {
 	return fileDescriptor_38fc58335341d769, []int{0}
 }
-func (m *C2SMsg) XXX_Unmarshal(b []byte) error {
+func (m *C2SPackageMsg) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *C2SMsg) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *C2SPackageMsg) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_C2SMsg.Marshal(b, m, deterministic)
+		return xxx_messageInfo_C2SPackageMsg.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -49,49 +49,49 @@ func (m *C2SMsg) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 		return b[:n], nil
 	}
 }
-func (m *C2SMsg) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_C2SMsg.Merge(m, src)
+func (m *C2SPackageMsg) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_C2SPackageMsg.Merge(m, src)
 }
-func (m *C2SMsg) XXX_Size() int {
+func (m *C2SPackageMsg) XXX_Size() int {
 	return m.Size()
 }
-func (m *C2SMsg) XXX_DiscardUnknown() {
-	xxx_messageInfo_C2SMsg.DiscardUnknown(m)
+func (m *C2SPackageMsg) XXX_DiscardUnknown() {
+	xxx_messageInfo_C2SPackageMsg.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_C2SMsg proto.InternalMessageInfo
+var xxx_messageInfo_C2SPackageMsg proto.InternalMessageInfo
 
-func (m *C2SMsg) GetUserID() uint64 {
+func (m *C2SPackageMsg) GetUserID() uint64 {
 	if m != nil {
 		return m.UserID
 	}
 	return 0
 }
 
-func (m *C2SMsg) GetBody() []byte {
+func (m *C2SPackageMsg) GetBody() []byte {
 	if m != nil {
 		return m.Body
 	}
 	return nil
 }
 
-type S2CMsg struct {
+type S2CPackageMsg struct {
 	UserID uint64 `protobuf:"varint,1,opt,name=UserID,proto3" json:"UserID,omitempty"`
 	Body   []byte `protobuf:"bytes,2,opt,name=Body,proto3" json:"Body,omitempty"`
 }
 
-func (m *S2CMsg) Reset()         { *m = S2CMsg{} }
-func (m *S2CMsg) String() string { return proto.CompactTextString(m) }
-func (*S2CMsg) ProtoMessage()    {}
-func (*S2CMsg) Descriptor() ([]byte, []int) {
+func (m *S2CPackageMsg) Reset()         { *m = S2CPackageMsg{} }
+func (m *S2CPackageMsg) String() string { return proto.CompactTextString(m) }
+func (*S2CPackageMsg) ProtoMessage()    {}
+func (*S2CPackageMsg) Descriptor() ([]byte, []int) {
 	return fileDescriptor_38fc58335341d769, []int{1}
 }
-func (m *S2CMsg) XXX_Unmarshal(b []byte) error {
+func (m *S2CPackageMsg) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *S2CMsg) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *S2CPackageMsg) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_S2CMsg.Marshal(b, m, deterministic)
+		return xxx_messageInfo_S2CPackageMsg.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -101,26 +101,26 @@ func (m *S2CMsg) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 		return b[:n], nil
 	}
 }
-func (m *S2CMsg) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_S2CMsg.Merge(m, src)
+func (m *S2CPackageMsg) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_S2CPackageMsg.Merge(m, src)
 }
-func (m *S2CMsg) XXX_Size() int {
+func (m *S2CPackageMsg) XXX_Size() int {
 	return m.Size()
 }
-func (m *S2CMsg) XXX_DiscardUnknown() {
-	xxx_messageInfo_S2CMsg.DiscardUnknown(m)
+func (m *S2CPackageMsg) XXX_DiscardUnknown() {
+	xxx_messageInfo_S2CPackageMsg.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_S2CMsg proto.InternalMessageInfo
+var xxx_messageInfo_S2CPackageMsg proto.InternalMessageInfo
 
-func (m *S2CMsg) GetUserID() uint64 {
+func (m *S2CPackageMsg) GetUserID() uint64 {
 	if m != nil {
 		return m.UserID
 	}
 	return 0
 }
 
-func (m *S2CMsg) GetBody() []byte {
+func (m *S2CPackageMsg) GetBody() []byte {
 	if m != nil {
 		return m.Body
 	}
@@ -223,34 +223,126 @@ func (m *UserLoginResp) GetServerID() uint32 {
 	return 0
 }
 
+type CreateNewUserReq struct {
+	UserID uint64 `protobuf:"varint,1,opt,name=UserID,proto3" json:"UserID,omitempty"`
+}
+
+func (m *CreateNewUserReq) Reset()         { *m = CreateNewUserReq{} }
+func (m *CreateNewUserReq) String() string { return proto.CompactTextString(m) }
+func (*CreateNewUserReq) ProtoMessage()    {}
+func (*CreateNewUserReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_38fc58335341d769, []int{4}
+}
+func (m *CreateNewUserReq) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CreateNewUserReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_CreateNewUserReq.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *CreateNewUserReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateNewUserReq.Merge(m, src)
+}
+func (m *CreateNewUserReq) XXX_Size() int {
+	return m.Size()
+}
+func (m *CreateNewUserReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateNewUserReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateNewUserReq proto.InternalMessageInfo
+
+func (m *CreateNewUserReq) GetUserID() uint64 {
+	if m != nil {
+		return m.UserID
+	}
+	return 0
+}
+
+type CreateNewUserResp struct {
+	Code ErrCode `protobuf:"varint,1,opt,name=Code,proto3,enum=pb.ErrCode" json:"Code,omitempty"`
+}
+
+func (m *CreateNewUserResp) Reset()         { *m = CreateNewUserResp{} }
+func (m *CreateNewUserResp) String() string { return proto.CompactTextString(m) }
+func (*CreateNewUserResp) ProtoMessage()    {}
+func (*CreateNewUserResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_38fc58335341d769, []int{5}
+}
+func (m *CreateNewUserResp) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CreateNewUserResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_CreateNewUserResp.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *CreateNewUserResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateNewUserResp.Merge(m, src)
+}
+func (m *CreateNewUserResp) XXX_Size() int {
+	return m.Size()
+}
+func (m *CreateNewUserResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateNewUserResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateNewUserResp proto.InternalMessageInfo
+
+func (m *CreateNewUserResp) GetCode() ErrCode {
+	if m != nil {
+		return m.Code
+	}
+	return SUCCESS
+}
+
 func init() {
-	proto.RegisterType((*C2SMsg)(nil), "pb.C2SMsg")
-	proto.RegisterType((*S2CMsg)(nil), "pb.S2CMsg")
+	proto.RegisterType((*C2SPackageMsg)(nil), "pb.C2SPackageMsg")
+	proto.RegisterType((*S2CPackageMsg)(nil), "pb.S2CPackageMsg")
 	proto.RegisterType((*UserLoginReq)(nil), "pb.UserLoginReq")
 	proto.RegisterType((*UserLoginResp)(nil), "pb.UserLoginResp")
+	proto.RegisterType((*CreateNewUserReq)(nil), "pb.CreateNewUserReq")
+	proto.RegisterType((*CreateNewUserResp)(nil), "pb.CreateNewUserResp")
 }
 
 func init() { proto.RegisterFile("game.proto", fileDescriptor_38fc58335341d769) }
 
 var fileDescriptor_38fc58335341d769 = []byte{
-	// 221 bytes of a gzipped FileDescriptorProto
+	// 254 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4a, 0x4f, 0xcc, 0x4d,
 	0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x2a, 0x48, 0x92, 0xe2, 0x4a, 0xce, 0x4f, 0x81,
-	0xf2, 0xa5, 0x44, 0xd2, 0xf3, 0xd3, 0xf3, 0xc1, 0x4c, 0x7d, 0x10, 0x0b, 0x22, 0xaa, 0x64, 0xc2,
-	0xc5, 0xe6, 0x6c, 0x14, 0xec, 0x5b, 0x9c, 0x2e, 0x24, 0xc6, 0xc5, 0x16, 0x5a, 0x9c, 0x5a, 0xe4,
-	0xe9, 0x22, 0xc1, 0xa8, 0xc0, 0xa8, 0xc1, 0x12, 0x04, 0xe5, 0x09, 0x09, 0x71, 0xb1, 0x38, 0xe5,
-	0xa7, 0x54, 0x4a, 0x30, 0x29, 0x30, 0x6a, 0xf0, 0x04, 0x81, 0xd9, 0x20, 0x5d, 0xc1, 0x46, 0xce,
-	0xa4, 0xea, 0x52, 0xe3, 0xe2, 0x01, 0xc9, 0xfa, 0xe4, 0xa7, 0x67, 0xe6, 0x05, 0xa5, 0x16, 0xe2,
-	0xd2, 0xab, 0xe4, 0xc3, 0xc5, 0x8b, 0xa4, 0xae, 0xb8, 0x40, 0x48, 0x9e, 0x8b, 0xc5, 0x39, 0x3f,
-	0x25, 0x15, 0xac, 0x8c, 0xcf, 0x88, 0x5b, 0xaf, 0x20, 0x49, 0xcf, 0xb5, 0xa8, 0x08, 0x24, 0x14,
-	0x04, 0x96, 0x10, 0x92, 0xe2, 0xe2, 0x08, 0x4e, 0x2d, 0x2a, 0x03, 0x9b, 0x05, 0xb2, 0x91, 0x37,
-	0x08, 0xce, 0x77, 0x52, 0xb9, 0xf0, 0x50, 0x8e, 0xe1, 0xc4, 0x23, 0x39, 0xc6, 0x0b, 0x8f, 0xe4,
-	0x18, 0x1f, 0x3c, 0x92, 0x63, 0x9c, 0xf0, 0x58, 0x8e, 0x61, 0xc6, 0x63, 0x39, 0x86, 0x0b, 0x8f,
-	0xe5, 0x18, 0x6e, 0x3c, 0x96, 0x63, 0x88, 0x62, 0x2a, 0x48, 0x4a, 0x62, 0x03, 0x07, 0x87, 0x31,
-	0x20, 0x00, 0x00, 0xff, 0xff, 0x24, 0x9f, 0xc3, 0xf6, 0x42, 0x01, 0x00, 0x00,
+	0xf2, 0xa5, 0x44, 0xd2, 0xf3, 0xd3, 0xf3, 0xc1, 0x4c, 0x7d, 0x10, 0x0b, 0x22, 0xaa, 0x64, 0xcd,
+	0xc5, 0xeb, 0x6c, 0x14, 0x1c, 0x90, 0x98, 0x9c, 0x9d, 0x98, 0x9e, 0xea, 0x5b, 0x9c, 0x2e, 0x24,
+	0xc6, 0xc5, 0x16, 0x5a, 0x9c, 0x5a, 0xe4, 0xe9, 0x22, 0xc1, 0xa8, 0xc0, 0xa8, 0xc1, 0x12, 0x04,
+	0xe5, 0x09, 0x09, 0x71, 0xb1, 0x38, 0xe5, 0xa7, 0x54, 0x4a, 0x30, 0x29, 0x30, 0x6a, 0xf0, 0x04,
+	0x81, 0xd9, 0x20, 0xcd, 0xc1, 0x46, 0xce, 0x64, 0x6a, 0x56, 0xe3, 0xe2, 0x01, 0xc9, 0xfa, 0xe4,
+	0xa7, 0x67, 0xe6, 0x05, 0xa5, 0x16, 0xe2, 0xd2, 0xab, 0xe4, 0xc3, 0xc5, 0x8b, 0xa4, 0xae, 0xb8,
+	0x40, 0x48, 0x9e, 0x8b, 0xc5, 0x39, 0x3f, 0x25, 0x15, 0xac, 0x8c, 0xcf, 0x88, 0x5b, 0xaf, 0x20,
+	0x49, 0xcf, 0xb5, 0xa8, 0x08, 0x24, 0x14, 0x04, 0x96, 0x10, 0x92, 0xe2, 0xe2, 0x08, 0x4e, 0x2d,
+	0x2a, 0x03, 0x9b, 0x05, 0xb2, 0x91, 0x37, 0x08, 0xce, 0x57, 0xd2, 0xe2, 0x12, 0x70, 0x2e, 0x4a,
+	0x4d, 0x2c, 0x49, 0xf5, 0x4b, 0x2d, 0x07, 0x19, 0x8b, 0xcf, 0x66, 0x13, 0x2e, 0x41, 0x34, 0xb5,
+	0x44, 0xd8, 0xee, 0xa4, 0x72, 0xe1, 0xa1, 0x1c, 0xc3, 0x89, 0x47, 0x72, 0x8c, 0x17, 0x1e, 0xc9,
+	0x31, 0x3e, 0x78, 0x24, 0xc7, 0x38, 0xe1, 0xb1, 0x1c, 0xc3, 0x8c, 0xc7, 0x72, 0x0c, 0x17, 0x1e,
+	0xcb, 0x31, 0xdc, 0x78, 0x2c, 0xc7, 0x10, 0xc5, 0x54, 0x90, 0x94, 0xc4, 0x06, 0x0e, 0x7e, 0x63,
+	0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x2b, 0xed, 0x4e, 0x40, 0xb2, 0x01, 0x00, 0x00,
 }
 
-func (m *C2SMsg) Marshal() (dAtA []byte, err error) {
+func (m *C2SPackageMsg) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -260,12 +352,12 @@ func (m *C2SMsg) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *C2SMsg) MarshalTo(dAtA []byte) (int, error) {
+func (m *C2SPackageMsg) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *C2SMsg) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *C2SPackageMsg) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -285,7 +377,7 @@ func (m *C2SMsg) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *S2CMsg) Marshal() (dAtA []byte, err error) {
+func (m *S2CPackageMsg) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -295,12 +387,12 @@ func (m *S2CMsg) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *S2CMsg) MarshalTo(dAtA []byte) (int, error) {
+func (m *S2CPackageMsg) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *S2CMsg) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *S2CPackageMsg) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -381,6 +473,62 @@ func (m *UserLoginResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *CreateNewUserReq) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CreateNewUserReq) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *CreateNewUserReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.UserID != 0 {
+		i = encodeVarintGame(dAtA, i, uint64(m.UserID))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *CreateNewUserResp) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CreateNewUserResp) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *CreateNewUserResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Code != 0 {
+		i = encodeVarintGame(dAtA, i, uint64(m.Code))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintGame(dAtA []byte, offset int, v uint64) int {
 	offset -= sovGame(v)
 	base := offset
@@ -392,7 +540,7 @@ func encodeVarintGame(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
-func (m *C2SMsg) Size() (n int) {
+func (m *C2SPackageMsg) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -408,7 +556,7 @@ func (m *C2SMsg) Size() (n int) {
 	return n
 }
 
-func (m *S2CMsg) Size() (n int) {
+func (m *S2CPackageMsg) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -451,13 +599,37 @@ func (m *UserLoginResp) Size() (n int) {
 	return n
 }
 
+func (m *CreateNewUserReq) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.UserID != 0 {
+		n += 1 + sovGame(uint64(m.UserID))
+	}
+	return n
+}
+
+func (m *CreateNewUserResp) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Code != 0 {
+		n += 1 + sovGame(uint64(m.Code))
+	}
+	return n
+}
+
 func sovGame(x uint64) (n int) {
 	return (math_bits.Len64(x|1) + 6) / 7
 }
 func sozGame(x uint64) (n int) {
 	return sovGame(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *C2SMsg) Unmarshal(dAtA []byte) error {
+func (m *C2SPackageMsg) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -480,10 +652,10 @@ func (m *C2SMsg) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: C2SMsg: wiretype end group for non-group")
+			return fmt.Errorf("proto: C2SPackageMsg: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: C2SMsg: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: C2SPackageMsg: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -545,7 +717,10 @@ func (m *C2SMsg) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthGame
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthGame
 			}
 			if (iNdEx + skippy) > l {
@@ -560,7 +735,7 @@ func (m *C2SMsg) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *S2CMsg) Unmarshal(dAtA []byte) error {
+func (m *S2CPackageMsg) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -583,10 +758,10 @@ func (m *S2CMsg) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: S2CMsg: wiretype end group for non-group")
+			return fmt.Errorf("proto: S2CPackageMsg: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: S2CMsg: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: S2CPackageMsg: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -648,7 +823,10 @@ func (m *S2CMsg) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthGame
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthGame
 			}
 			if (iNdEx + skippy) > l {
@@ -717,7 +895,10 @@ func (m *UserLoginReq) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthGame
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthGame
 			}
 			if (iNdEx + skippy) > l {
@@ -805,7 +986,154 @@ func (m *UserLoginResp) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthGame
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGame
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *CreateNewUserReq) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGame
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CreateNewUserReq: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CreateNewUserReq: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field UserID", wireType)
+			}
+			m.UserID = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGame
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.UserID |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGame(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGame
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthGame
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *CreateNewUserResp) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowGame
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CreateNewUserResp: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CreateNewUserResp: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Code", wireType)
+			}
+			m.Code = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowGame
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Code |= ErrCode(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipGame(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthGame
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthGame
 			}
 			if (iNdEx + skippy) > l {

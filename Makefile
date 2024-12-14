@@ -4,12 +4,11 @@ PHONY: run stop build clean pbc
 pbc:
 	@python3 corev2/message/pbc.py source=pb
 
-build: build_duel build_gate build_door build_game build_master
+build: build_gate build_door build_game build_master
 
 build_game:
 	@echo "Building gate..."
 	@cd game && go build -v -o ../bin/game
-
 # 构建 gate 服务
 build_gate:
 	@echo "Building gate..."
@@ -25,10 +24,6 @@ build_master:
 	@echo "Building master..."
 	@cd master && go build -v -o ../bin/master
 
-# 构建 master 服务
-build_duel:
-	@echo "Building duel..."
-	@cd duel && go build -v -o ../bin/duel
 
 # 定义 bin 目录
 BIN_DIR = $(shell pwd)/bin
