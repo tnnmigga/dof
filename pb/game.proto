@@ -3,12 +3,12 @@ package pb;
 
 import "code.proto";
 
-message C2SMsg {
+message C2SPackageMsg {
     uint64 UserID = 1;
     bytes Body    = 2;
 }
 
-message S2CMsg {
+message S2CPackageMsg {
     uint64 UserID = 1;
     bytes Body    = 2;
 }
@@ -20,4 +20,12 @@ message UserLoginReq {
 message UserLoginResp {
     ErrCode Code    = 1;
     uint32 ServerID = 2;
+}
+
+message CreateNewUserReq {
+    uint64 UserID = 1;
+}
+
+message CreateNewUserResp {
+    ErrCode Code = 1;
 }

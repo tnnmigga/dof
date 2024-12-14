@@ -15,9 +15,10 @@ import (
 	"golang.org/x/crypto/argon2"
 )
 
-func (m *module) Init() {
+func (m *module) Init() error {
 	message.Response(m, onTokenAuthReq)
 	message.Response(m, onAuthOrCreateAccountReq)
+	return nil
 }
 
 func onTokenAuthReq(body *pb.TokenAuthReq, response func(*pb.TokenAuthResp, error)) {

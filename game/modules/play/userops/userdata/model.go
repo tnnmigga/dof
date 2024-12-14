@@ -1,20 +1,14 @@
 package userdata
 
-import "fmt"
-
-type Entity struct {
+type Meta struct {
 	ID  uint64 `bson:"_id"`
 	Tag *Tag   `bson:"-"`
 }
 
-func New(id uint64) *Entity {
-	return &Entity{
+func New(id uint64) *Meta {
+	return &Meta{
 		ID: id,
 	}
-}
-
-func groupKey(uid uint64) string {
-	return fmt.Sprintf("mongo.userdata.%d", uid)
 }
 
 type Tag struct {

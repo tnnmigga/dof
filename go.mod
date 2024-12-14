@@ -8,7 +8,7 @@ require (
 	github.com/golang/protobuf v1.5.4
 	github.com/gorilla/websocket v1.5.3
 	github.com/redis/go-redis/v9 v9.7.0
-	github.com/tnnmigga/corev2 v0.0.0-20241206164449-2e7159e7d8fc
+	github.com/tnnmigga/corev2 v0.0.0-20241001102833-5cf3b0df62c1
 	go.mongodb.org/mongo-driver v1.17.0
 	golang.org/x/crypto v0.27.0
 )
@@ -16,9 +16,9 @@ require (
 require (
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
-	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
+	github.com/gomodule/redigo v1.9.2 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/klauspost/compress v1.17.8 // indirect
@@ -45,7 +45,6 @@ require (
 	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/go-playground/validator.v8 v8.18.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/mysql v1.5.7 // indirect
 	gorm.io/gorm v1.25.12 // indirect
 )

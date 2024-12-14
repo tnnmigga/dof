@@ -21,32 +21,49 @@ func GenCard(cid int32) ICard {
 
 type ICard interface {
 	ID() int32
-	Attack() int32
-	Defense() int32
-	Health() int32
 }
 
-type Card struct {
-	attack  int32
-	defense int32
-	health  int32
+type cardBasic struct {
+	Pairs   []Pair[string, int32]
 	Effects []IEffect // 效果
 	Skills  []ISkill  // 技能
 }
 
+func (c *cardBasic) Value(key string, value ...int32) int32 {
+	for _, item := range c.Pairs {
+		if item.First != key {
+			continue
+		}
+		if len(value) > 0 {
+			item.Second = value[0]
+		}
+		return item.Second
+	}
+	if len(value) > 0 {
+		c.Pairs = append(c.Pairs, Pair[string, int32]{key, value[0]})
+		return value[0]
+	}
+	return 0
+}
+
 func (c *Card) Attack() int32 {
-	return c.attack
+	return c.Value(EnumCardValue.Attack)
 }
 
 func (c *Card) Defense() int32 {
-	return c.defense
+	return c.Value(EnumCardValue.Defense)
 }
 
 func (c *Card) Health() int32 {
-	return c.health
+	return c.Value(EnumCardValue.Health)
+}
+
+
+
+type Card struct {
+	cardBasic
 }
 
 type IEffect interface {
 }
 
-type ISkill interface{}

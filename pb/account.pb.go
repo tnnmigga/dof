@@ -581,7 +581,10 @@ func (m *AuthOrCreateAccountReq) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthAccount
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthAccount
 			}
 			if (iNdEx + skippy) > l {
@@ -682,7 +685,10 @@ func (m *AuthOrCreateAccountResp) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthAccount
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthAccount
 			}
 			if (iNdEx + skippy) > l {
@@ -764,7 +770,10 @@ func (m *TokenAuthReq) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthAccount
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthAccount
 			}
 			if (iNdEx + skippy) > l {
@@ -871,7 +880,10 @@ func (m *TokenAuthResp) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthAccount
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthAccount
 			}
 			if (iNdEx + skippy) > l {

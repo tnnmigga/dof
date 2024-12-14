@@ -17,7 +17,6 @@ func New() iface.IModule {
 	m := &module{
 		IModule: basic.NewConcurrency(moduleName),
 	}
-	m.Init()
 	return m
 }
 

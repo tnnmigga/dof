@@ -8,16 +8,16 @@ import (
 	"github.com/tnnmigga/corev2/message/codec"
 )
 
-var msgHandler = map[reflect.Type]func(p *userdata.Entity, msg any){}
+var msgHandler = map[reflect.Type]func(p *userdata.Meta, msg any){}
 
-func HandleMsg[T any](m iface.IModule, handler func(m *userdata.Entity, msg *T)) {
+func HandleMsg[T any](m iface.IModule, handler func(m *userdata.Meta, msg *T)) {
 	mType := reflect.TypeOf(new(T))
 	if _, ok := msgHandler[mType]; ok {
 		panic("msg handler already exists")
 	}
 	codec.Register[T]()
 	// 注册消息处理函数
-	msgHandler[mType] = func(m *userdata.Entity, msg any) {
+	msgHandler[mType] = func(m *userdata.Meta, msg any) {
 		handler(m, msg.(*T))
 	}
 }

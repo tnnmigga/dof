@@ -7,6 +7,6 @@ import (
 	"github.com/tnnmigga/corev2/log"
 )
 
-func onSayHelloReq(user *userdata.Entity, req *pb.SayHelloReq) {
+func onSayHelloReq(user *userdata.Meta, req *pb.SayHelloReq) {
 	log.Infof("onSayHelloReq %d %s", user.ID, req.Text)
 }
