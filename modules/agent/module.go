@@ -24,7 +24,7 @@ type IListener interface {
 	Close()
 }
 
-func New() *module {
+func New() iface.IModule {
 	protocol := conf.Str("agent.protocol", ProtocolWebSocket)
 	m := basic.NewConcurrency()
 	a := &module{

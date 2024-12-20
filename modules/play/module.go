@@ -6,13 +6,14 @@ import (
 	"eastv2/modules/play/userops"
 
 	"github.com/tnnmigga/corev2/basic"
+	"github.com/tnnmigga/corev2/iface"
 )
 
 type module struct {
 	*domain.Domain
 }
 
-func New() *module {
+func New() iface.IModule {
 	m := &module{
 		Domain: domain.New(basic.NewEventLoop(basic.DefaultMQLen)),
 	}

@@ -9,7 +9,7 @@ type module struct {
 	iface.IModule
 }
 
-func New() *module {
+func New() iface.IModule {
 	m := &module{
 		IModule: basic.NewEventLoop(basic.DefaultMQLen),
 	}

@@ -11,11 +11,10 @@ type module struct {
 	iface.IModule
 }
 
-func New() *module {
+func New() iface.IModule {
 	m := &module{
 		IModule: basic.NewConcurrency(),
 	}
-	m.Init()
 	return m
 }
 

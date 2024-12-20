@@ -1,0 +1,17 @@
+serverID: 1001
+
+log:
+  stdout: ../logs/door.log
+  stderr: ../logs/door.log
+
+nmq:
+  default:
+    url: nats://127.0.0.1:4222
+
+mgdb:
+  default:
+    host: 127.0.0.1
+    port: 27017
+    user:
+    pass:
+    name: game

@@ -8,21 +8,21 @@ build: build_gate build_door build_game build_master
 
 build_game:
 	@echo "Building gate..."
-	@cd game && go build -v -o ../bin/game
+	@go build -v -o bin/game ./service/game
 # 构建 gate 服务
 build_gate:
 	@echo "Building gate..."
-	@cd gate && go build -v -o ../bin/gate
+	@go build -v -o bin/gate ./service/gate
 
 # 构建 door 服务
 build_door:
 	@echo "Building door..."
-	@cd door && go build -v -o ../bin/door
+	@go build -v -o bin/door ./service/door
 
 # 构建 master 服务
 build_master:
 	@echo "Building master..."
-	@cd master && go build -v -o ../bin/master
+	@go build -v -o bin/master ./service/master
 
 
 # 定义 bin 目录
@@ -36,7 +36,7 @@ run:
 	@for service in $(SERVICES); do \
 	  echo "Starting $$service..."; \
 	  #   echo "Command: cd $(shell pwd)/$$service && $(BIN_DIR)/$$service > $(shell pwd)/logs/$$service.log 2>&1 &"; \
-	  cd $(shell pwd)/$$service && $(BIN_DIR)/$$service >> $(shell pwd)/logs/$$service.log 2>&1 & \
+	  cd $(shell pwd)/service/$$service && $(BIN_DIR)/$$service >> $(shell pwd)/logs/$$service.log 2>&1 & \
 	  sleep 1; \
 	  PID=$$(pgrep -f "$(BIN_DIR)/$$service"); \
 	  if [ -n "$$PID" ]; then \
@@ -67,7 +67,7 @@ clean:
 	rm -f logs/*.log
 
 wscli:
-	@node gate/fakecli/wscli.js
+	@node fakecli/wscli.js
 
 tcpcli:
-	@node gate/fakecli/tcpcli.js
+	@node fakecli/tcpcli.js
