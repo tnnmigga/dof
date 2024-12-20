@@ -1,6 +1,7 @@
 package account
 
 import (
+	"eastv2/define"
 	"fmt"
 
 	"github.com/tnnmigga/corev2/basic"
@@ -19,7 +20,7 @@ func New() iface.IModule {
 }
 
 func (m module) Name() string {
-	return "account"
+	return define.ModuleName.Account
 }
 
 func tokenKey(token string) string {

@@ -1,6 +1,8 @@
 package agent
 
 import (
+	"eastv2/define"
+
 	"github.com/tnnmigga/corev2/basic"
 	"github.com/tnnmigga/corev2/conf"
 	"github.com/tnnmigga/corev2/iface"
@@ -45,7 +47,7 @@ func New() iface.IModule {
 }
 
 func (m module) Name() string {
-	return "agent"
+	return define.ModuleName.Agent
 }
 
 func (m *module) Run() error {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"eastv2/modules/hss"
+	"eastv2/modules/door"
 
 	"github.com/tnnmigga/corev2"
 	"github.com/tnnmigga/corev2/system"
@@ -10,7 +10,7 @@ import (
 func main() {
 	app := corev2.DefaultApp()
 	app.Append(
-		hss.New(),
+		door.New(),
 	)
 	app.Launch()
 	defer app.Shutdown()

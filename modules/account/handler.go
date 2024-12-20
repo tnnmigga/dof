@@ -26,7 +26,7 @@ func onTokenAuthReq(body *pb.TokenAuthReq, response func(*pb.TokenAuthResp, erro
 	if errors.Is(err, redis.Nil) {
 		response(&pb.TokenAuthResp{Code: pb.PARAM_ERROR}, nil)
 	}
-	resp, err := message.RequestAny[pb.UserLoginResp](define.SERV_GAME, &pb.UserLoginReq{UserID: uid})
+	resp, err := message.RequestAny[pb.UserLoginResp](define.ModuleName.Play, &pb.UserLoginReq{UserID: uid})
 	if err != nil {
 		log.Error(err)
 		response(&pb.TokenAuthResp{Code: pb.SERVER_ERROR}, nil)

@@ -3,8 +3,8 @@ package main
 import (
 	"eastv2/modules/account"
 	"eastv2/modules/agent"
+	"eastv2/modules/door"
 	"eastv2/modules/duel"
-	"eastv2/modules/hss"
 	"eastv2/modules/play"
 
 	"github.com/tnnmigga/corev2"
@@ -18,7 +18,7 @@ func main() {
 		agent.New(),
 		play.New(),
 		duel.New(),
-		hss.New(),
+		door.New(),
 	)
 	app.Launch()
 	defer app.Shutdown()

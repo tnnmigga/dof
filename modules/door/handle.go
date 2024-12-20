@@ -1,4 +1,4 @@
-package hss
+package door
 
 import (
 	"eastv2/define"
@@ -29,7 +29,7 @@ func loginOrRegister(c *gin.Context) {
 		c.String(http.StatusBadRequest, "")
 		return
 	}
-	resp, err := message.RequestAny[pb.AuthOrCreateAccountResp](define.SERV_MASTER, &pb.AuthOrCreateAccountReq{
+	resp, err := message.RequestAny[pb.AuthOrCreateAccountResp](define.ModuleName.Account, &pb.AuthOrCreateAccountReq{
 		Account:  data.Account,
 		Password: data.Password,
 	})

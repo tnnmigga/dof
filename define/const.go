@@ -1,8 +1,11 @@
 package define
 
-const (
-	SERV_MASTER = "master"
-	SERV_GAME   = "game"
-	SERV_GATE   = "gate"
-	SERV_DOOR   = "door"
-)
+import "github.com/tnnmigga/corev2/utils"
+
+var ModuleName = utils.NewEnum[struct {
+	Play    string
+	Account string
+	Agent   string
+	Duel    string
+	Door    string
+}]()
